@@ -8,60 +8,63 @@ using System.IO;
 
 namespace AutomationFramework
 {
-  public class Browser
-  {
-    public static IWebDriver webDriver;
-
-    private static readonly string baseURL = ConfigurationManager.AppSettings["url"];
-    private static readonly string browser = ConfigurationManager.AppSettings["browser"];
-
-    public static void Init()
+    public class Browser
     {
-      switch (browser)
-      {
-        case "Chrome":
-          webDriver = new ChromeDriver();
-          break;
-        case "IE":
-          webDriver = new InternetExplorerDriver();
-          break;
-        case "Firefox":
-          webDriver = new FirefoxDriver();
-          break;
-      }
-      webDriver.Manage().Window.Maximize();
-      Goto(baseURL);
-    }
-    public static string Title
-    {
-      get { return webDriver.Title; }
-    }
-    public static IWebDriver getDriver
-    {
-      get { return webDriver; }
-    }
+        public static IWebDriver webDriver;
 
-    public static void TakeScreenshot()
-    {
+        private static readonly string baseURL = ConfigurationManager.AppSettings["url"];
+        private static readonly string browser = ConfigurationManager.AppSettings["browser"];
+        ChromeOptions chromeOptions = new ChromeOptions();
 
-      string path = ConfigurationManager.AppSettings["screenshot"];
-      var dateTimeString = DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
-      Directory.CreateDirectory(path);
-      Screenshot ss = ((ITakesScreenshot)getDriver).GetScreenshot();
-      ss.SaveAsFile(path + "\\" + "Internet" + "-" + dateTimeString + ".jpg", ScreenshotImageFormat.Png);
+        public static void Init()
+        {
+            switch (browser)
+            {
+                case "Chrome":
+                    new Browser().chromeOptions.AddArguments("incognito");
+                    new Browser().chromeOptions.AddArguments("--no-sandbox");
+                    webDriver = new ChromeDriver();
+                    break;
+                case "IE":
+                    webDriver = new InternetExplorerDriver();
+                    break;
+                case "Firefox":
+                    webDriver = new FirefoxDriver();
+                    break;
+            }
+            webDriver.Manage().Window.Maximize();
+            Goto(baseURL);
+        }
+        public static string Title
+        {
+            get { return webDriver.Title; }
+        }
+        public static IWebDriver getDriver
+        {
+            get { return webDriver; }
+        }
 
+        public static void TakeScreenshot()
+        {
+
+            string path = ConfigurationManager.AppSettings["screenshot"];
+            var dateTimeString = DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
+            Directory.CreateDirectory(path);
+            Screenshot ss = ((ITakesScreenshot)getDriver).GetScreenshot();
+            ss.SaveAsFile(path + "\\" + "Internet" + "-" + dateTimeString + ".jpg", ScreenshotImageFormat.Png);
+
+        }
+
+
+
+        public static void Goto(string url)
+        {
+            webDriver.Url = url;
+
+        }
+        public static void Close()
+        {
+            webDriver.Quit();
+        }
     }
-
-   
-
-    public static void Goto(string url)
-    {
-      webDriver.Url = url;
-      
-    }
-    public static void Close()
-    {
-      webDriver.Quit();
-    }
-  }
 }
