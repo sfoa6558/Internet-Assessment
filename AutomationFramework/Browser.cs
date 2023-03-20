@@ -18,12 +18,15 @@ namespace AutomationFramework
 
         public static void Init()
         {
+
+
             switch (browser)
             {
                 case "Chrome":
-                    new Browser().chromeOptions.AddArguments("incognito");
-                    new Browser().chromeOptions.AddArguments("--no-sandbox");
-                    webDriver = new ChromeDriver();
+                    Browser chrome = new Browser();
+                    chrome.chromeOptions.AddArguments("incognito");
+                    chrome.chromeOptions.AddArguments("--no-sandbox");
+                    webDriver = new ChromeDriver(chrome.chromeOptions);
                     break;
                 case "IE":
                     webDriver = new InternetExplorerDriver();

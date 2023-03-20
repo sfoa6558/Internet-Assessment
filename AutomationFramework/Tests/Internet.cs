@@ -11,7 +11,7 @@ namespace AutomatedTestCases
     {
         public readonly AddRemovePage addRemovePage = new AddRemovePage();
 
-      
+
         [TestCase(7)]
         public void AddTest(int el)
         {
@@ -41,7 +41,7 @@ namespace AutomatedTestCases
 
     }
 
-    
+
 
 }
 
