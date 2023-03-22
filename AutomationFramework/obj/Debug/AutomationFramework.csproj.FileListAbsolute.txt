@@ -87,8 +87,6 @@ C:/Users/fakinyemi/fetch_rewards/AutomationFramework/obj/Debug/AutomationFramewo
 /Users/folaakinyemi/Internet/AutomationFramework/bin/Debug/SeleniumExtras.WaitHelpers.dll
 /Users/folaakinyemi/Internet/AutomationFramework/bin/Debug/WebDriver.dll
 /Users/folaakinyemi/Internet/AutomationFramework/bin/Debug/WebDriver.Support.dll
-/Users/folaakinyemi/Internet/AutomationFramework/bin/Debug/nunit.framework.pdb
-/Users/folaakinyemi/Internet/AutomationFramework/bin/Debug/nunit.framework.xml
 /Users/folaakinyemi/Internet/AutomationFramework/bin/Debug/WebDriver.xml
 /Users/folaakinyemi/Internet/AutomationFramework/bin/Debug/WebDriver.Support.xml
 /Users/folaakinyemi/Internet/AutomationFramework/obj/Debug/AutomationFramework.csproj.AssemblyReference.cache
@@ -96,4 +94,3 @@ C:/Users/fakinyemi/fetch_rewards/AutomationFramework/obj/Debug/AutomationFramewo
 /Users/folaakinyemi/Internet/AutomationFramework/obj/Debug/AutomationFramework.csproj.CopyComplete
 /Users/folaakinyemi/Internet/AutomationFramework/obj/Debug/AutomationFramework.dll
 /Users/folaakinyemi/Internet/AutomationFramework/obj/Debug/AutomationFramework.pdb
-/Users/folaakinyemi/Internet/AutomationFramework/obj/Debug/AutomationFramework.csproj.SuggestedBindingRedirects.cache

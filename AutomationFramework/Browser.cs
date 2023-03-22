@@ -24,7 +24,6 @@ namespace AutomationFramework
             {
                 case "Chrome":
                     Browser chrome = new Browser();
-                    chrome.chromeOptions.AddArguments("incognito");
                     chrome.chromeOptions.AddArguments("--no-sandbox");
                     webDriver = new ChromeDriver(chrome.chromeOptions);
                     break;
