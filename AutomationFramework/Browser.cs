@@ -25,6 +25,7 @@ namespace AutomationFramework
                 case "Chrome":
                     Browser chrome = new Browser();
                     chrome.chromeOptions.AddArguments("--disable-dev-shm-usage");
+                    chrome.chromeOptions.AddArguments("--headless");
                     chrome.chromeOptions.AddArguments("--no-sandbox");
                     chrome.chromeOptions.AddArguments("start-maximized");
                     chrome.chromeOptions.AddArguments("disable-infobars");
