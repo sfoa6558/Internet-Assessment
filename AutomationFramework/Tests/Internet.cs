@@ -13,11 +13,11 @@ namespace AutomatedTestCases
 
 
         [TestCase(7)]
-        public void AddTest(int el)
+        public void AddTest(int n)
         {
 
-            AddElements(el);
-            VerifyElements(el);
+            AddElements(n);
+            VerifyElements(n);
 
 
         }

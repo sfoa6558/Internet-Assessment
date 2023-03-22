@@ -3,12 +3,12 @@
 namespace AutomationFramework.Pages
 {
 
-  public class AddRemovePage
-  {
-    public By addElement = By.CssSelector(".example > button");
-    public By addedElement = By.CssSelector(".added-manually");
-   
-  }
+    public class AddRemovePage
+    {
+        public By addElement = By.CssSelector(".example > button");
+        public By addedElement = By.CssSelector(".added-manually");
+
+    }
 
 }
 
